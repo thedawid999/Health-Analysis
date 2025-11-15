@@ -1,0 +1,83 @@
+#############################################
+# LaTeX (für LaTeX Workshop, latexmk, biber)
+#############################################
+
+# Output directory (falls du "build" benutzt)
+build/
+
+# LaTeX aux files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Intermediate LaTeX Workshop files
+*.pytxcode
+*.snm
+*.nav
+*.vrb
+
+# Old/backup files
+*~
+*.bak
+*.backup
+
+#############################################
+# Python
+#############################################
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+#############################################
+# Jupyter Notebooks
+#############################################
+
+.ipynb_checkpoints/
+
+#############################################
+# VS Code
+#############################################
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+#############################################
+# System Files
+#############################################
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
