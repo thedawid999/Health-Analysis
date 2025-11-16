@@ -1,0 +1,106 @@
+\chapter{Datenbeschreibung und EDA}
+
+\section{Herkunft und Struktur des Datensatzes}
+- Quelle (z. B. Kaggle OSMI Mental Health in Tech 2016)\\
+- Stichprobe, Anzahl der Merkmale, Datentypen\\
+- Besonderheiten: Freitextfelder, kategoriale Felder, sensible Daten\\
+
+\section{Erste deskriptive Analysen???}
+- Verteilungen wichtiger Merkmale\\
+- Häufigkeiten, zentrale Tendenzen\\
+- Identifikation möglicher Probleme: Outlier, Inkonistenzen\\
+
+\section{Explorative Visualisierungen}
+- Histogramme, Barplots, Boxplots\\
+- Korrelationen / Heatmaps\\
+- Erste Hypothesen über Muster im Datensatz\\
+
+
+
+\chapter{Datenvorverarbeitung}
+
+\section{Umgang mit fehlenden Werten}
+- Identifikation der fehlenden Werte\\
+- Strategien (z. B. Dropping, Imputation, Domain-Knowledge)\\
+- Begründung der gewählten Methode\\
+
+\section{Bereinigung unstandardisierter Texteingaben???}
+- Vereinheitlichung von Kategorien\\
+- Lowercasing, Mapping, Domain-basierte Zusammenführung\\
+- Umgang mit Freitext-Antworten\\
+
+\section{Kodierung und Transformation der Merkmale???}
+- One-Hot-Encoding, Ordinal Encoding, ggf. Target-Encoding\\
+- Herausforderungen bei hochkardinalen Features\\
+
+\section{Skalierung und Normalisierung}
+- Notwendigkeit im Kontext von Clustering\\
+- Auswahl der Methoden (z. B. StandardScaler)\\
+
+
+
+\chapter{Feature Engineering}
+
+\section{Feature Selection}
+- Variance Threshold\\
+- Korrelationen / Redundanz\\
+- Relevanzbasierte Auswahl (Mutual Information)\\
+
+\section{Feature Generation}
+- Erstellen neuer Merkmale aus bestehenden Variablen\\
+- Beispiele: Stress-Score, Support-Index, Arbeitsumfeld-Indikatoren\\
+- Nutzen für Modellverständlichkeit und Clustering\\
+
+
+
+\chapter{Dimensionsreduktion}
+Warum Dimensionsreduktion?\\
+Vorgehensweise\\
+
+\section{Methoden der Dimensionsreduktion}
+- PCA (linear)\\
+- MDS, LLE (nichtlinear)\\
+- Vergleich und Begründung der Auswahl\\
+
+\section{Ergebnisse und Visualisierung}
+- Erklärte Varianz (PCA)\\
+- 2D/3D-Darstellungen\\
+- Herausgearbeitete Muster und Trends\\
+
+
+
+\chapter{Clustering}
+
+\section{Auswahl geeigneter Methoden}
+- K-Means\\
+- Agglomeratives Clustering\\
+- DBSCAN/HDBSCAN für komplexe Strukturen\\
+- Begründung der Auswahl\\
+
+\section{Bestimmung der Clusteranzahl}
+- Elbow-Methode\\
+- Silhouette Score\\
+- Weitere Metriken\\
+
+\section{Ergebnisse}
+- Visualisierungen der Cluster (PCA/UMAP Scatterplots)\\
+- Profiling: Beschreibung der typischen Merkmale jedes Clusters\\
+- Identifikation gefährdeter Gruppen und Muster\\
+
+\section{Übertragung auf HR-Kontext}
+- Welcher Cluster ist besonders belastet?\\
+- Welche Kombinationen von Faktoren treten gehäuft auf?\\
+- Welche Gruppen könnten gezielte Unterstützung benötigen?\\
+
+
+
+
+
+
+
+
+
+
+
+
+
