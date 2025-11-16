@@ -348,6 +348,7 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txexa.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txexa.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txexa.tfm
+OUTPUT build/00-Main.toc
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txbss.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxphvb.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxbss.tfm
@@ -357,7 +358,6 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxbss.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
-OUTPUT build/00-Main.toc
 INPUT build/00-Main.lof
 INPUT build/00-Main.lof
 INPUT build/00-Main.lof
