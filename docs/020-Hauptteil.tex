@@ -1,19 +1,43 @@
-\chapter{Datenbeschreibung und EDA}
+\chapter{Datenbeschreibung und Explorative Datenanalyse}
+Im Rahmen der Exploratory Data Analysis wurde der Datensatz auf Struktur, 
+Verteilungen, fehlende Werte und potenzielle Inkonsistenzen untersucht. 
+Dabei wurden zentrale Merkmale analysiert und erste Muster identifiziert, 
+die Hinweise auf relevante Einflussfaktoren psychischer Belastung liefern. 
+Die Ergebnisse der EDA bilden die Grundlage für die anschließende Vorverarbeitung 
+und das Feature Engineering.
 
 \section{Herkunft und Struktur des Datensatzes}
 - Quelle (z. B. Kaggle OSMI Mental Health in Tech 2016)\\
-- Stichprobe, Anzahl der Merkmale, Datentypen\\
-- Besonderheiten: Freitextfelder, kategoriale Felder, sensible Daten\\
+- Stichprobe beschreiben, Anzahl der Merkmale, Datentypen\\
+- Besonderheiten: Freitextfelder, kategoriale Felder, sensible Daten
+\begin{itemize}
+    \item Also Quelle ist https://www.kaggle.com/datasets/osmi/mental-health-in-tech-2016?resource=download
+    \item Die OSMI Mental Health in Tech Survey 2016 ist eine internationale Umfrage mit 
+über 1400 Teilnehmern aus dem IT- und Tech-Bereich. Ziel der Umfrage ist es, 
+Einstellungen gegenüber psychischer Gesundheit am Arbeitsplatz zu erfassen und 
+die Häufigkeit psychischer Erkrankungen unter Beschäftigten in der Tech-Branche 
+zu untersuchen. Die gesammelten Daten werden vom Open Sourcing Mental Illness (OSMI) 
+Team genutzt, um das Bewusstsein für psychische Gesundheit zu stärken und die 
+Arbeitsbedingungen für Betroffene in der IT zu verbessern.
+    \item 1433 Zeilen also Teilnehmer und 63 Spalten also Fragen.
+    \item Datentypen sind int64, float64 und hauptsächlich object also eine Texteingabe.
+    \item Fehlende Werte gibts i.d.R. viele (siehe Heatmap). Zwischen Fragen 0 bis 36 gibts
+immer wieder Leute die nichts eingetragen haben. Die meisten fehlende Werte liegen
+zwischen Frage 16 und 24. Das sind Fragen wie:\\
+- "Do you have medical coverage 
+(private insurance or state-provided) which includes treatment of  
+mental health issues?\\
+- If you have been diagnosed or treated for a mental health disorder, do you 
+ever reveal this to coworkers or employees?\\
+- Do you believe your productivity is ever affected by a mental health issue?\\
+Also konkrete und stark private Fragen, die jedoch am meisten zum Thema beitragen
+\end{itemize}
 
 \section{Erste deskriptive Analysen???}
-- Verteilungen wichtiger Merkmale\\
+- Verteilungen wichtiger Merkmale (Gender, Age, Wohnland/Arbeitsland)\\
 - Häufigkeiten, zentrale Tendenzen\\
 - Identifikation möglicher Probleme: Outlier, Inkonistenzen\\
 
-\section{Explorative Visualisierungen}
-- Histogramme, Barplots, Boxplots\\
-- Korrelationen / Heatmaps\\
-- Erste Hypothesen über Muster im Datensatz\\
 
 
 
@@ -39,6 +63,7 @@
 \chapter{Feature Engineering}
 
 \section{Feature Selection}
+OFFENE FRAGEN LÖSCHEN WIE "Why or why not?"
 - Variance Threshold\\
 - Korrelationen / Redundanz\\
 - Relevanzbasierte Auswahl (Mutual Information)\\
