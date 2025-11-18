@@ -53,9 +53,18 @@ aus USA und UK kommt
 \chapter{Datenvorverarbeitung}
 
 \section{Umgang mit fehlenden Werten}
-- Identifikation der fehlenden Werte\\
+- Identifikation der fehlenden Werte (siehe Heatmap)\\
 - Strategien (z. B. Dropping, Imputation, Domain-Knowledge)\\
 - Begründung der gewählten Methode\\
+\begin{itemize}
+    \item die fehlenden Werte hauptsächlich bei Fragen 16 bis 24 wie vorher erwähnt.
+Die Fragen zwischen aus Spalten 1-2, 4, 6-15 und 24-43 beinhalten auch fehlende Werte 
+doch deutlich weniger, an den horizontalen linien erkennt man dass diese von den 
+selben Leuten immer sind. Deswegen werden diese Zeilen gelöscht. Imputation lohnt sich
+nicht, da die Werte hauptsächlich Strings sind die unterschiedlich sind.
+    \item Die Frage 4 wird nicht gelöscht da es wichtige Frage ist "Does your 
+    employer provide mental health benefits as part of healthcare coverage?"
+\end{itemize}
 
 \section{Bereinigung unstandardisierter Texteingaben???}
 - Vereinheitlichung von Kategorien\\
@@ -72,7 +81,7 @@ aus USA und UK kommt
 \chapter{Feature Engineering}
 
 \section{Feature Selection}
-OFFENE FRAGEN LÖSCHEN WIE "Why or why not?"
+OFFENE FRAGEN LÖSCHEN WIE "Why or why not?" oder "If yes..."
 - Variance Threshold\\
 - Korrelationen / Redundanz\\
 - Relevanzbasierte Auswahl (Mutual Information)\\
