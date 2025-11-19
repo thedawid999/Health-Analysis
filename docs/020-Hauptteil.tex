@@ -56,9 +56,7 @@ aus USA und UK kommt
 - Strategien (z. B. Dropping, Imputation, Domain-Knowledge)\\
 - Begründung der gewählten Methode\\
 \begin{itemize}
-    \item zuerst werden alle offenen Fragen gelöscht die schwer von KI zu
-interpretieren sind für eine Clustering Aufgabe (z.B. Why or why not?) und Fragen
-die auf vorherige Antwort bezogen sind also (What US state do you work in/live in?)
+    
     \item bezüglich fehlenden Werten werden zuerst Befragte gesucht die von allen
 Fragen mehr als 40\% unbeantwortet haben. Diese entfernen!
     \item jetzt die Fragen die mehr als 40\% missing ratio haben werden gelöscht
@@ -72,6 +70,11 @@ ergänzt.
 - Vereinheitlichung von Kategorien\\
 - Lowercasing, Mapping, Domain-basierte Zusammenführung\\
 - Umgang mit Freitext-Antworten\\
+\begin{itemize}
+    \item zuerst werden alle offenen Fragen gelöscht die schwer von KI zu
+interpretieren sind für eine Clustering Aufgabe (z.B. Why or why not?) und Fragen
+die auf vorherige Antwort bezogen sind also (What US state do you work in/live in?)
+\end{itemize}
 
 \section{Kodierung und Transformation der Merkmale???}
 - One-Hot-Encoding, Ordinal Encoding, ggf. Target-Encoding\\
