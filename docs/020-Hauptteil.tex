@@ -49,7 +49,6 @@ aus USA und UK kommt
 
 
 
-
 \chapter{Datenvorverarbeitung}
 
 \section{Umgang mit fehlenden Werten}
@@ -57,17 +56,16 @@ aus USA und UK kommt
 - Strategien (z. B. Dropping, Imputation, Domain-Knowledge)\\
 - Begründung der gewählten Methode\\
 \begin{itemize}
-    \item die fehlenden Werte hauptsächlich bei Fragen 16 bis 24 wie vorher erwähnt.
-Die Fragen zwischen aus Spalten 1-2, 4, 6-15 und 24-43 beinhalten auch fehlende Werte 
-doch deutlich weniger, an den horizontalen linien erkennt man dass diese von den 
-selben Leuten immer sind. Deswegen werden diese Zeilen gelöscht. Imputation lohnt sich
-nicht, da die Werte hauptsächlich Strings sind die unterschiedlich sind.
-    \item Die Frage 4 wird nicht gelöscht da es wichtige Frage ist "Does your 
-    employer provide mental health benefits as part of healthcare coverage?" und
-    KATEGORIAL ist --> "UNKNOWN"w
-    \item Die Frage 6 "Has your employer ever formally discussed mental health 
-    (for example, as part of a wellness campaign or other official communication)?"
-    auch imputieren
+    \item zuerst werden alle offenen Fragen gelöscht die schwer von KI zu
+interpretieren sind für eine Clustering Aufgabe (z.B. Why or why not?) und Fragen
+die auf vorherige Antwort bezogen sind also (What US state do you work in/live in?)
+    \item bezüglich fehlenden Werten werden zuerst Befragte gesucht die von allen
+Fragen mehr als 40\% unbeantwortet haben. Diese entfernen!
+    \item jetzt die Fragen die mehr als 40\% missing ratio haben werden gelöscht
+    \item Befragte die weniger als 20\%fehlende Werte haben, werden durch Imputation
+ergänzt.
+    
+
 \end{itemize}
 
 \section{Bereinigung unstandardisierter Texteingaben???}
