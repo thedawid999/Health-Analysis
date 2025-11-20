@@ -56,12 +56,20 @@ aus USA und UK kommt
 - Strategien (z. B. Dropping, Imputation, Domain-Knowledge)\\
 - Begründung der gewählten Methode\\
 \begin{itemize}
-    
     \item bezüglich fehlenden Werten werden zuerst Befragte gesucht die von allen
 Fragen mehr als 40\% unbeantwortet haben. Diese entfernen!
     \item jetzt die Fragen die mehr als 40\% missing ratio haben werden gelöscht
-    \item Befragte die weniger als 20\%fehlende Werte haben, werden durch Imputation
-ergänzt.
+    \item Befragte die weniger als 25\%fehlende Werte haben, werden durch Imputation
+ergänzt. Hier werden mehrere Antwortarten und Imputationen unterschieden:
+\\ - kategorial (ja/nein/idk) -- idk selbst wählen
+\\ - ordinal (gut/mittel/schlecht) -- median(), zuerst in zahlen kodieren, dann
+Median berechnen und dann entkodieren
+\\ - numerisch (z.B. Alter) -- median()
+\\ - multilabel (z.B. Job-Rollen) -- "UNKNOWN"
+\\ - binary (0/1. ja/nein) -- mode()
+\\ Es wurden insgesamt 1014 und davon wurden nur die berücksichtigt die tatsächlich
+fehlende werte haben. Von den Befragten (missing ratio < 0.25) wurden dann 3 Fragen
+gefunden die fehlende Werte hatten
     
 
 \end{itemize}
