@@ -19,10 +19,10 @@ die Häufigkeit psychischer Erkrankungen unter Beschäftigten in der Tech-Branch
 zu untersuchen. Die gesammelten Daten werden vom Open Sourcing Mental Illness (OSMI) 
 Team genutzt, um das Bewusstsein für psychische Gesundheit zu stärken und die 
 Arbeitsbedingungen für Betroffene in der IT zu verbessern.
-    \item 1433 Zeilen also Teilnehmer und 63 Spalten also Fragen.
-    \item Datentypen sind int64, float64 und hauptsächlich object also eine Texteingabe.
+    \item 1433 Zeilen also Teilnehmer und 63 Spalten also Fragen. [9]
+    \item Datentypen sind int64, float64 und hauptsächlich object also eine Texteingabe. [7]
     \item Fehlende Werte gibts i.d.R. viele (siehe Heatmap). Zwischen Fragen 0 bis 36 gibts
-immer wieder Leute die nichts eingetragen haben. Die meisten fehlende Werte liegen
+immer wieder Leute die nichts eingetragen haben. Die meisten fehlende Werte liegen [43]
 zwischen Frage 16 und 24. Das sind Fragen wie:\\
 - "Do you have medical coverage 
 (private insurance or state-provided) which includes treatment of  
@@ -37,11 +37,12 @@ Also konkrete und stark private Fragen, die jedoch am meisten zum Thema beitrage
 - Verteilungen wichtiger Merkmale (Gender, Age, Wohnland/Arbeitsland)\\
 - Identifikation möglicher Probleme: Outlier, Inkonistenzen\\
 \begin{itemize}
-    \item es wurden basisdaten analysiert wie GENDER, AGE, WOHNLAND und Arbeitsland
+    \item es wurden basisdaten analysiert wie GENDER [37], AGE[38], WOHNLAND[40]
+     und Arbeitsland[41]
     \item Da GENDER keine vordefinierte Antworten hatte, hat jeder Befragte seine eigene 
 Antwort geschrieben, was dazu führt dass danach eingie Gruppen zusammengeführt werden
 müssen (wie Female, female, f) und andere komplett entfernt (z.B. Dude, mail)
-    \item beim AGE gibts Ausreißer über 100 und 300 Jahre analysiert
+    \item beim AGE gibts Ausreißer [39]über 100 und 300 Jahre analysiert
     \item Arbeitsland und Wohnland sehen gut aus, hier zeigt sich dass der Großteil
 aus USA und UK kommt
     \item Die Befragten arbeiten hauptsächlich in dem Land in dem sie wohnen (1407:26)
@@ -56,11 +57,14 @@ aus USA und UK kommt
 - Strategien (z. B. Dropping, Imputation, Domain-Knowledge)\\
 - Begründung der gewählten Methode\\
 \begin{itemize}
+    \item zuerst werden alle offenen Fragen gelöscht die schwer von KI zu
+interpretieren sind für eine Clustering Aufgabe (z.B. Why or why not?) und Fragen
+die auf vorherige Antwort bezogen sind also (What US state do you work in/live in?) [114]
     \item bezüglich fehlenden Werten werden zuerst Befragte gesucht die von allen
-Fragen mehr als 40\% unbeantwortet haben. Diese entfernen!
-    \item jetzt die Fragen die mehr als 40\% missing ratio haben werden gelöscht
+Fragen mehr als 40\% unbeantwortet haben. Diese entfernen! [115]
+    \item jetzt die Fragen die mehr als 40\% missing ratio haben werden gelöscht [117]
     \item Befragte die weniger als 25\%fehlende Werte haben, werden durch Imputation
-ergänzt. Hier werden mehrere Antwortarten und Imputationen unterschieden:
+ergänzt. Hier werden mehrere Antwortarten und Imputationen unterschieden: [119, 122]
 \\ - kategorial (ja/nein/idk) -- idk selbst wählen
 \\ - ordinal (gut/mittel/schlecht) -- median(), zuerst in zahlen kodieren, dann
 Median berechnen und dann entkodieren
@@ -74,22 +78,28 @@ gefunden die fehlende Werte hatten
 zugewiesen
     \item Frage 32: auch kategorial: aus no/maybenotsure/yesiobserved/yesiexperienced
 wird automatisch maybe/notsure zugewiesen 
-    \item Frage 41: sollten eigentlich zwei vordefinierte Werte sein - male, female
-aber jeder hat freien text geschrieben und es sind antworten gekommen wie "f", "cis man"
-"none of your business", deswegen bevor die fehlenden werte imputiert werden, müssen
-die antworten vereinheitlicht werden
-    
-
+    \item Frage 41: sollten eigentlich drei vordefinierte Werte sein - male, female, 
+others. Dann fehlen nur 3 Werte und es werden einfach zu Others hinzugewiesen.
+Der Umgang mit verschiedenen Kategorien (also Vereinheitlichen) wird im nächste
+Kapitel beschrieben.
 \end{itemize}
 
-\section{Bereinigung unstandardisierter Texteingaben???}
+\section{Ausreißer und Werte vereinheitlichen}
 - Vereinheitlichung von Kategorien\\
 - Lowercasing, Mapping, Domain-basierte Zusammenführung\\
 - Umgang mit Freitext-Antworten\\
 \begin{itemize}
-    \item zuerst werden alle offenen Fragen gelöscht die schwer von KI zu
-interpretieren sind für eine Clustering Aufgabe (z.B. Why or why not?) und Fragen
-die auf vorherige Antwort bezogen sind also (What US state do you work in/live in?)
+    \item jeder hat freien text geschrieben und es sind antworten gekommen wie "f", "cis man"
+"none of your business", deswegen bevor die fehlenden werte imputiert werden, müssen
+die antworten vereinheitlicht werden (durch mapping). Es wurden keywords vordefiniert
+z.b. bei man (male, m, man, ...). Falls solche in der Antwort vorkommen, wird es zu Man 
+gemappt, genauso mit Female. Alles andere wird zu Others zugewiesen [119]
+    \item beim age werden ausreißer und unseriöse werte. Allgemein werden also Befragte
+mit Alter <17 und >67 gelöscht [124]
+    \item Einzelwerte von AGE wurden in Gruppen zusammengefasst (17-25, 26-35,
+    36-45, 46-55, 56-67) [124]
+    \item länder (WOHNLAND und ARBEITSLAND) werden zu 10 am häufigsten vorkommenden
+Ländern zusammengefasst, der Rest zu Others [124]
 \end{itemize}
 
 \section{Kodierung und Transformation der Merkmale???}
