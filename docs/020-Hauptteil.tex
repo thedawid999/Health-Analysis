@@ -112,7 +112,19 @@ usw. bis Community=7 und Other=99
 - One-Hot-Encoding, Ordinal Encoding, ggf. Target-Encoding\\
 - Skalierung (Transformation)\\
 - Herausforderungen bei hochkardinalen Features\\
-
+\begin{itemize}
+    \item binäre Daten - OneHot, kategorial nominale - OneHot, kategoriale ordinale - 
+OrdinalEncoder
+    \item für binäre/nominale daten wurden zuerst manuell alle antworten analysiert 
+und nur die spalten gewählt die diese art von antworten haben, danach transformiert
+fitten.
+    \item ordinale sind alle restlichen (werte wie "I dont know werden immer ganz hinten
+liegen, modelle können es dann als 'separate kategorie berachten'. es wird nicht gelöscht,
+da viele personen solche antwort gewählt haben und diese kann sehr wertvoll sein)
+    \item für onehot wurde neues dataframe erstellt, für die ordinale wurde data\_clean 
+überschrieben. Mit pd.concat() wurden die beiden kombiniert zu einem neuen dataframe
+data\_encoded, welches nur aus numerischen werten besteht
+\end{itemize}
 
 
 \chapter{Feature Engineering}
