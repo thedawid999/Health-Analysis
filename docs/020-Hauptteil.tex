@@ -122,8 +122,13 @@ fitten.
 liegen, modelle können es dann als 'separate kategorie berachten'. es wird nicht gelöscht,
 da viele personen solche antwort gewählt haben und diese kann sehr wertvoll sein)
     \item für onehot wurde neues dataframe erstellt, für die ordinale wurde data\_clean 
-überschrieben. Mit pd.concat() wurden die beiden kombiniert zu einem neuen dataframe
+überschrieben. 
+    \item Mit pd.concat() wurden die beiden kombiniert zu einem neuen dataframe
 data\_encoded, welches nur aus numerischen werten besteht
+    \item ordinalencodierte und onehotencodierte skalieren wegen Einheitlichkeit
+für abstandbasierte ML-Modelle. Dies erfolgt mit StandardScaler aus 
+sklearn.preprocessing. Es wird nicht mit MinMax gemacht, da ...
+
 \end{itemize}
 
 
