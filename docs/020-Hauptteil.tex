@@ -128,17 +128,32 @@ data\_encoded, welches nur aus numerischen werten besteht
     \item ordinalencodierte und onehotencodierte skalieren wegen Einheitlichkeit
 für abstandbasierte ML-Modelle. Dies erfolgt mit StandardScaler aus 
 sklearn.preprocessing. Es wird nicht mit MinMax gemacht, da ...
-
+    \item der vorverarbeitete datensatz wurde als neue datei gespeichert
+data\_preprocessed.csv
 \end{itemize}
+
 
 
 \chapter{Feature Engineering}
 
 \section{Feature Selection}
-OFFENE FRAGEN LÖSCHEN WIE "Why or why not?" oder "If yes..."
 - Variance Threshold\\
 - Korrelationen / Redundanz\\
 - Relevanzbasierte Auswahl (Mutual Information)\\
+\begin{itemize}
+    \item für unsupervised learning eignen sich am besten der Variance Threshold und
+die Korrelationsmatrix
+    \item zuerst variance threshol mit einem schwellenwert von 0.01. Es wurden zwei 
+Fragen gefunden die binär waren und nur eine Antwort haben\\
+- Are you self-employed?\_0 mit allen 0 bzw False Werten(\_1 gibts nicht, da alle 
+NEIN beantwortet haben)\\
+- Do you have previous employers?\_1  mit allen 0 bzw False (\_0 gibts nicht, da alle
+auch NEIN beantwortet haben)\\
+also kann man beide löschen, da sie immer die gleichen werte haben
+    \item es wurden bei korrelationsmatrix mehrere fragen automatisch gewählt.
+Die binären und nominalen (wie Länder) werden nicht entfernt, WEIL...?
+Es werden nur die ordinalen entfernt die zwischeneinander stark korrelieren
+\end{itemize}
 
 \section{Feature Generation}
 - Erstellen neuer Merkmale aus bestehenden Variablen\\
