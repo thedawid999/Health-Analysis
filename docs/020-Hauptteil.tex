@@ -151,8 +151,21 @@ NEIN beantwortet haben)\\
 auch NEIN beantwortet haben)\\
 also kann man beide löschen, da sie immer die gleichen werte haben
     \item es wurden bei korrelationsmatrix mehrere fragen automatisch gewählt.
-Die binären und nominalen (wie Länder) werden nicht entfernt, WEIL...?
-Es werden nur die ordinalen entfernt die zwischeneinander stark korrelieren
+    \item - Is your employer primarily a tech company/organization?\_0.0\\
+- Is your employer primarily a tech company/organization?\_1.0: 1.00\\
+Es ist eine binäre Frage die one-hot encodiert ist, und somit wenn ich eine davon lösche,
+verliere ich keine Informationen von den anderen\\
+das gleiche gilt für\\
+- Have you heard of or observed negative consequences for co-workers who have been open about mental health issues in your workplace?\_No\\
+- Have you heard of or observed negative consequences for co-workers who have been open about mental health issues in your workplace?\_Yes: 1.00\\
+und noch diese\\
+- Have you been diagnosed with a mental health condition by a medical professional?\_No\\
+- Have you been diagnosed with a mental health condition by a medical professional?\_Yes: 1.00\\
+und diese
+- Have you ever sought treatment for a mental health issue from a mental health professional?\_0\\
+- Have you ever sought treatment for a mental health issue from a mental health professional?\_1: 1.00\\
+    \item bezüglich Wohnland und Arbeitsland wird die jede Spalte vom Wohnland entfernt,
+da die kleinste Korrelation einen wert von 0.96 beträgt, was sehr hoch ist
 \end{itemize}
 
 \section{Feature Generation}
