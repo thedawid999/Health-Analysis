@@ -172,6 +172,19 @@ da die kleinste Korrelation einen wert von 0.96 beträgt, was sehr hoch ist
 - Erstellen neuer Merkmale aus bestehenden Variablen\\
 - Beispiele: Stress-Score, Support-Index, Arbeitsumfeld-Indikatoren\\
 - Nutzen für Modellverständlichkeit und Clustering\\
+\begin{itemize}
+    \item NEUE Features:
+    \item employer\_support\_score - höher je mehr Unterstützung der Arbeitgeber bietet
+    \item prev\_employer\_support\_score - höher je mehr Unterstützung der ehemalige 
+Arbeitgeber geboten hat
+    \item openness\_score - wie offen der Befragte bei einem neuen Arbeitgeber wäre
+    \item perceived\_stigma\_score - höher, wenn der Befragte denkt, dass MH schadet
+(Karriere/Team)
+    \item mh\_status\_score - misst wie stark der Befragte mental gesund ist
+    \item jede Antwort wird entsprechend bewertet, werte die gegen den Score sind MINUS
+und Werte für den Score sind PLUS. Danach wird die Summe aller Fragen berechnet, die
+zu dem Score gehören und der Durschnitt berechnet (DURCHSCHNITT NORMALSIEREN?)
+\end{itemize}
 
 
 
