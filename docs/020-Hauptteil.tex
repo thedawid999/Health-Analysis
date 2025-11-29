@@ -133,7 +133,6 @@ data\_preprocessed.csv
 \end{itemize}
 
 
-
 \chapter{Feature Engineering}
 
 \section{Feature Selection}
@@ -165,42 +164,37 @@ und diese
 - Have you ever sought treatment for a mental health issue from a mental health professional?\_0\\
 - Have you ever sought treatment for a mental health issue from a mental health professional?\_1: 1.00\\
     \item bezüglich Wohnland und Arbeitsland wird die jede Spalte vom Wohnland entfernt,
-da die kleinste Korrelation einen wert von 0.96 beträgt, was sehr hoch ist
+da die kleinste Korrelation einen wert von 0.96 beträgt, was sehr hoch Inkonistenzen
+    \item AUF FEATURE GENERATION WURDE VERZICHTET, WEIL...
 \end{itemize}
-
-\section{Feature Generation}
-- Erstellen neuer Merkmale aus bestehenden Variablen\\
-- Beispiele: Stress-Score, Support-Index, Arbeitsumfeld-Indikatoren\\
-- Nutzen für Modellverständlichkeit und Clustering\\
-\begin{itemize}
-    \item NEUE Features:
-    \item employer\_support\_score - höher je mehr Unterstützung der Arbeitgeber bietet
-    \item prev\_employer\_support\_score - höher je mehr Unterstützung der ehemalige 
-Arbeitgeber geboten hat
-    \item openness\_score - wie offen der Befragte bei einem neuen Arbeitgeber wäre
-    \item perceived\_stigma\_score - höher, wenn der Befragte denkt, dass MH schadet
-(Karriere/Team)
-    \item mh\_status\_score - misst wie stark der Befragte mental gesund ist
-    \item jede Antwort wird entsprechend bewertet, werte die gegen den Score sind MINUS
-und Werte für den Score sind PLUS. Danach wird die Summe aller Fragen berechnet, die
-zu dem Score gehören und der Durschnitt berechnet (DURCHSCHNITT NORMALSIEREN?)
-\end{itemize}
-
-
-
-\chapter{Dimensionsreduktion}
-Warum Dimensionsreduktion?\\
-Vorgehensweise\\
 
 \section{Methoden der Dimensionsreduktion}
 - PCA (linear)\\
 - MDS, LLE (nichtlinear)\\
 - Vergleich und Begründung der Auswahl\\
+\begin{itemize}
+    \item WARUM DIMENSIONSREDUKTION?
+    \item PCA wird verwendet, weil sie auf varianz basiert und alle werte sind bereits
+encodiert und standardisiert auf mittelwert 0 und varianz 1
+    \item die Features wurden linear skaliert mit StandardScaler, daher sind die für
+lineare Analyse gut vorbereitet (PCA ist linear)
+    \item MDS nicht, weil distanzbasiert und ich muss zuerst ein Distanzmaß definieren
+    \item LLE nicht, weil setzt Mannigfaltigkeiten voraus, das trifft bei Fragebogendaten
+fast nie zu, benötigt viele Datenpunkte
+\end{itemize}
 
 \section{Ergebnisse und Visualisierung}
 - Erklärte Varianz (PCA)\\
 - 2D/3D-Darstellungen\\
 - Herausgearbeitete Muster und Trends\\
+\begin{itemize}
+    \item zuerst wird ein Explained Variance Plot dargestellt um die beste Anazahl von
+Hauptkomponenten zu finden
+    \item der Ellenbogen Punkt liegt bei 10, jedoch es ist unter 85\% Varianz, diese
+befindet sich erst bei 64 Hauptkomponenten. 10 enthält nur 32\% der Varianz. Es wird
+also K=64 gewählt.
+    \item DIAGRAMME ZEIGEN
+\end{itemize}
 
 
 
