@@ -172,6 +172,7 @@ da die kleinste Korrelation einen wert von 0.96 beträgt, was sehr hoch Inkonist
 - PCA (linear)\\
 - MDS, LLE (nichtlinear)\\
 - Vergleich und Begründung der Auswahl\\
+\subsection{ANSATZ A: PCA}
 \begin{itemize}
     \item WARUM DIMENSIONSREDUKTION?
     \item PCA wird verwendet, weil sie auf varianz basiert und alle werte sind bereits
@@ -181,20 +182,43 @@ lineare Analyse gut vorbereitet (PCA ist linear)
     \item MDS nicht, weil distanzbasiert und ich muss zuerst ein Distanzmaß definieren
     \item LLE nicht, weil setzt Mannigfaltigkeiten voraus, das trifft bei Fragebogendaten
 fast nie zu, benötigt viele Datenpunkte
-\end{itemize}
-
-\section{Ergebnisse und Visualisierung}
-- Erklärte Varianz (PCA)\\
-- 2D/3D-Darstellungen\\
-- Herausgearbeitete Muster und Trends\\
-\begin{itemize}
-    \item zuerst wird ein Explained Variance Plot dargestellt um die beste Anazahl von
+    item zuerst wird ein Explained Variance Plot dargestellt um die beste Anazahl von
 Hauptkomponenten zu finden
     \item der Ellenbogen Punkt liegt bei 10, jedoch es ist unter 85\% Varianz, diese
 befindet sich erst bei 64 Hauptkomponenten. 10 enthält nur 32\% der Varianz. Es wird
 also K=64 gewählt.
     \item DIAGRAMME ZEIGEN
+    \item PROBLEM: sehr viele Hauptkomponenten, schwierig interpretierbar, UND wenn
+Anzahl Cluster Berechnung mit BIC ist ein sehr hoher Wert (kleinster bei k=2 220000)
+und SilhouettenScore sehr niedrig (größter bei k=2 0.044)
+    \item aus diesen Gründen wurde Ansatz B gewählt
 \end{itemize}
+\subsection{ANSATZ B: manuelle Feature Transformation}
+    \begin{itemize}
+    \item hierfür wurden Fragen die zu gleichen Themen gehören zusammengefasst, 
+Antworten gewichtet, in neuer Feature gespeichert und danach gelöscht
+    \item NEUE Features:
+    \item employer\_support\_score - höher je mehr Unterstützung der Arbeitgeber bietet
+    \item prev\_employer\_support\_score - höher je mehr Unterstützung der ehemalige 
+Arbeitgeber geboten hat
+    \item openness\_score - wie offen der Befragte bei einem neuen Arbeitgeber wäre
+    \item perceived\_stigma\_score - höher, wenn der Befragte denkt, dass MH schadet
+(Karriere/Team)
+    \item mh\_status\_score - misst wie stark der Befragte mental gesund ist
+    \item jede Antwort wird entsprechend bewertet, werte die gegen den Score sind MINUS
+und Werte für den Score sind PLUS. Danach wird die Summe aller Fragen berechnet, die
+zu dem Score gehören und der Durschnitt berechnet (danach mit StandardScaler skaliert)
+    \item insgesamt 106 Fragen zu 5 Features zusammengefasst und danach Fragen gelöscht
+    \item VORTEILE: jetzt sind es insgesamt 35 Features, also weniger als 64 bei PCA,
+die Features sind gut interpretierbar und außerdem haben die besseren BIC (k=2 35000)
+und silhouetten (k=2 0.29)
+    \item bic sinkt mit anzahl cluster (also laut bic k=12 besser als k=2), beim
+silhouetten ist umgekehrt. Es werden k=3 gewählt (also eher silhouetten betrachten), 
+da es angibt wie gut getrennt und ziel der aufgabe ist gute interpretierbarkeit.
+Es wird k=3 gewählt, da laut bic je mehr desto besser und bei silhouetten ist 
+k=2 (0.29) und k=3 (0.28) sehr ähnlich, k=4 (0.13) sinkt sehr stark, deswegen ist 
+k=3 perfekt
+    \end{itemize}
 
 
 
@@ -205,11 +229,25 @@ also K=64 gewählt.
 - Agglomeratives Clustering\\
 - DBSCAN/HDBSCAN für komplexe Strukturen\\
 - Begründung der Auswahl\\
+\begin{itemize}
+    \item berücksichtigt wurden folgende Algorithmen: k-Means, GMM, DBSCAN und
+hierarchisch Agglomerativ
+    \item VERGLEICH QUELLEN: 
+    \item https://learninglabb.com/clustering-algorithms-in-machine-learning/
+    \item https://krishnapullak.medium.com/guide-to-clustering-algorithms-strengths-weaknesses-and-evaluation-5285a75ea902
+    \item https://www.geeksforgeeks.org/data-science/choosing-the-right-clustering-algorithm-for-your-dataset/
+    \item es wurde GMM gewählt, da KMEANS dafür zu "fest" ist, andere waren für die
+Datensätze nicht geeignet.
+    \item 
+\end{itemize}
 
 \section{Bestimmung der Clusteranzahl}
 - Elbow-Methode\\
 - Silhouette Score\\
 - Weitere Metriken\\
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \section{Ergebnisse}
 - Visualisierungen der Cluster (PCA/UMAP Scatterplots)\\
