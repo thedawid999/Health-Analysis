@@ -246,13 +246,71 @@ Datensätze nicht geeignet.
 - Silhouette Score\\
 - Weitere Metriken\\
 \begin{itemize}
-    \item 
+    \item wie vorher erwähnt durch vergleich zweier ansätze - pca und manuell generiert,
+wurden bereits die k berechnet, es wird k=3 gewählt
 \end{itemize}
 
 \section{Ergebnisse}
 - Visualisierungen der Cluster (PCA/UMAP Scatterplots)\\
 - Profiling: Beschreibung der typischen Merkmale jedes Clusters\\
 - Identifikation gefährdeter Gruppen und Muster\\
+\begin{itemize}
+    \item es entstehen 3 cluster (0: 102 Personen, 1: 898 Personen, 2: 9 Personen)
+    \item diese wurden standardisiert:
+    \item employer\_support\_score
+\\Cluster 0:  0.62  (überdurchschnittlich)
+\\Cluster 1:  0.54  (überdurchschnittlich)
+\\Cluster 2: -1.2  (stark unterdurchschnittlich)
+    \item 2 fühlt sich von Arbeitgeber sehr wenig unterstützt, 0 besser als 1 unterstützt
+    \item prev\_employer\_support\_score
+\\Cluster 0:  0.19   (durchschnittlich)
+\\Cluster 1:  0.89   (viel support)
+\\Cluster 2: -1.1   (deutlich weniger support)
+    \item 2 hatte früher schlechte Arbeitgeber, 0 durchschnittliche Erfahrung, 
+    1 gute erfahrung
+    \item 2 zeigt klares Muster von schlechter Umgebung (früher + aktuell)
+    \item openness\_score
+\\Cluster 0: -0.69  (leicht weniger offen)
+\\Cluster 1: -0.46  (wenig offen)
+\\Cluster 2:  1.1  (deutlich offener)
+    \item 2 viel offener, 0 eher verschlossen, 1 wenig offen
+    \item perceived\_stigma\_score
+\\Cluster 0: -0.83 (viel weniger)
+\\Cluster 1: -0.29 (wenig)
+\\Cluster 2:  1.1 (mehr Stigma)
+    \item 2 viel stigma, 0 und 1 wenig
+    \item mh\_status\_score
+\\Cluster 0: -1.1  (schlechtester mental state)
+\\Cluster 1:  0.36  (leicht überdurchschnittlich)
+\\Cluster 2:  0.77  (bester mental state)
+    \item 0 schlecht mental gesund, 2 guter zustand, 1 durchschnittlich
+    \item GESAMT: (aus diesen 5 features erkennen wir) 
+    \item CLUSTER 2: offene, mental stabile Personen trotz geringer Arbeitgeberunterstützung,
+aber höhere stigma, also denken dass sie benachteilgt wären wenn sie mental krank wären
+    \item CLUSTER 0: verschlossen, schlechter mentaler Zustand, trotz besseren support
+als Cluster 2
+    \item CLUSTER 1: dient eher als Vergleichsgruppe, alles durchschnittlich
+    \item BILD!
+    \item JOB ROLES:
+    \item CLUSTER 0: viele aus community (writer, advocate), hr/admin und design,
+und paar devops
+    \item CLUSTER 1: eher devops paar developer und Lead
+    \item CLUSTER 2: Developer und others
+    \item ARBEITSLAND:
+    \item CLUSTER 0: hauptsächlich Australia, Ireland aber auch Kanada und bisschen
+UK, USA
+    \item CLUSTER 1: Hauptsächlich Frankreich, Deutschland, Netherlands, Others, Schweden
+UK, USA, bisschen auch Kanada
+    \item CLUSTER 2: hauptsächlich Brazil
+    \item TECH COMPANY?:
+    \item CLUSTER 0: ja
+    \item CLUSTER 1: eher ja aber nicht immer
+    \item CLUSTER 2: nein
+    \item GENDER:
+    \item CLUSTER 0: hauptächlich other aber auch frauen, männer nicht
+    \item CLUSTER 1: männer und frauen (frauen bissl mehr)
+    \item CLUSTER 2: hauptsächlich männer
+\end{itemize}
 
 \section{Übertragung auf HR-Kontext}
 - Welcher Cluster ist besonders belastet?\\
