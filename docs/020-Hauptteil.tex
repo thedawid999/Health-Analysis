@@ -254,97 +254,177 @@ wurden bereits die k berechnet, es wird k=3 gewählt
 - Visualisierungen der Cluster (PCA/UMAP Scatterplots)\\
 - Profiling: Beschreibung der typischen Merkmale jedes Clusters\\
 - Identifikation gefährdeter Gruppen und Muster\\
-\begin{itemize}
-    \item es entstehen 3 cluster (0: 102 Personen, 1: 898 Personen, 2: 9 Personen)
-    \item diese wurden standardisiert:
-    \item employer\_support\_score
-\\Cluster 0:  0.62  (überdurchschnittlich)
-\\Cluster 1:  0.54  (überdurchschnittlich)
-\\Cluster 2: -1.2  (stark unterdurchschnittlich)
-    \item 2 fühlt sich von Arbeitgeber sehr wenig unterstützt, 0 besser als 1 unterstützt
-    \item prev\_employer\_support\_score
-\\Cluster 0:  0.19   (durchschnittlich)
-\\Cluster 1:  0.89   (viel support)
-\\Cluster 2: -1.1   (deutlich weniger support)
-    \item 2 hatte früher schlechte Arbeitgeber, 0 durchschnittliche Erfahrung, 
-    1 gute erfahrung
-    \item 2 zeigt klares Muster von schlechter Umgebung (früher + aktuell)
-    \item openness\_score
-\\Cluster 0: -0.69  (leicht weniger offen)
-\\Cluster 1: -0.46  (wenig offen)
-\\Cluster 2:  1.1  (deutlich offener)
-    \item 2 viel offener, 0 eher verschlossen, 1 wenig offen
-    \item perceived\_stigma\_score
-\\Cluster 0: -0.83 (viel weniger)
-\\Cluster 1: -0.29 (wenig)
-\\Cluster 2:  1.1 (mehr Stigma)
-    \item 2 viel stigma, 0 und 1 wenig
-    \item mh\_status\_score
-\\Cluster 0: -1.1  (schlechtester mental state)
-\\Cluster 1:  0.36  (leicht überdurchschnittlich)
-\\Cluster 2:  0.77  (bester mental state)
-    \item 0 schlecht mental gesund, 2 guter zustand, 1 durchschnittlich
-    \item GESAMT: (aus diesen 5 features erkennen wir) 
-    \item CLUSTER 2: offene, mental stabile Personen trotz geringer Arbeitgeberunterstützung,
+
+es entstehen 3 cluster (0: 102 Personen, 1: 898 Personen, 2: 9 Personen)
+\begin{table}[H]
+    \centering
+    \caption{Clustering von employer\_support\_score}
+    \label{tab:clustering_ess}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Cluster 0} & 0.62 & überdurchschnittlich \\ \hline
+        \textbf{Cluster 1} & 0.54 & überdurchschnittlich \\ \hline
+        \textbf{Cluster 2} & -1.2 & stark unterdurchschnittlich \\ \hline
+    \end{tabular}
+\end{table}
+2 fühlt sich von Arbeitgeber sehr wenig unterstützt, 0 besser als 1 unterstützt
+
+\begin{table}[H]
+    \centering
+    \caption{Clustering von prev\_employer\_support\_score}
+    \label{tab:clustering_pess}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Cluster 0} & 0.19 & durchschnittlich \\ \hline
+        \textbf{Cluster 1} & 0.89 & überdurchschnittlich \\ \hline
+        \textbf{Cluster 2} & -1.1 & stark unterdurchschnittlich \\ \hline
+    \end{tabular}
+\end{table}
+2 hatte früher schlechte Arbeitgeber, 0 durchschnittliche Erfahrung, 1 gute erfahrung, 
+2 zeigt klares Muster von schlechter Umgebung (früher + aktuell)
+
+\begin{table}[H]
+    \centering
+    \caption{Clustering von openness\_score}
+    \label{tab:clustering_os}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Cluster 0} & -0.69 & unterdurchschnittlich \\ \hline
+        \textbf{Cluster 1} & -0.46 & unterdurchschnittlich \\ \hline
+        \textbf{Cluster 2} & 1.1 & stark überdurchschnittlich \\ \hline
+    \end{tabular}
+\end{table}
+2 viel offener, 0 eher verschlossen, 1 wenig offen
+
+\begin{table}[H]
+    \centering
+    \caption{Clustering von perceived\_stigma\_score}
+    \label{tab:clustering_pss}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Cluster 0} & -0.83 & stark unterdurchschnittlich \\ \hline
+        \textbf{Cluster 1} & -0.29 & unterdurchschnittlich \\ \hline
+        \textbf{Cluster 2} & 1.1 & stark überdurchschnittlich \\ \hline
+    \end{tabular}
+\end{table}
+2 viel stigma, 0 und 1 wenig
+
+\begin{table}[H]
+    \centering
+    \caption{Clustering von mh\_status\_score}
+    \label{tab:clustering_mhss}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Cluster 0} & -1.1 & stark unterdurchschnittlich \\ \hline
+        \textbf{Cluster 1} & 0.36 & leicht überdurchschnittlich \\ \hline
+        \textbf{Cluster 2} & 0.77 & überdurchschnittlich \\ \hline
+    \end{tabular}
+\end{table}
+0 schlecht mental gesund, 2 guter zustand, 1 durchschnittlich
+
+GESAMT: (aus diesen 5 features erkennen wir) 
+CLUSTER 2: offene, mental stabile Personen trotz geringer Arbeitgeberunterstützung,
 aber höhere stigma, also denken dass sie benachteilgt wären wenn sie mental krank wären
-    \item CLUSTER 0: verschlossen, schlechter mentaler Zustand, trotz besseren support
+CLUSTER 0: verschlossen, schlechter mentaler Zustand, trotz besseren support
 als Cluster 2
-    \item CLUSTER 1: dient eher als Vergleichsgruppe, alles durchschnittlich
-    \item BILD!
-    \item JOB ROLES:
-    \item CLUSTER 0: viele aus community (writer, advocate), hr/admin und design,
+CLUSTER 1: dient eher als Vergleichsgruppe, alles durchschnittlich
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/selected_features_radar_chart.png}
+    \caption{Fünf selbst-generierte Features pro Cluster}
+    \label{fig:radar_chart_features_per_cluster}
+\end{figure}
+
+Danach wurden andere Features untersucht, wie Job Roles, diese sind folgend verteilt:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/job_roles_per_cluster.png}
+    \caption{Arbeitsstellen pro Cluster}
+    \label{fig:job_roles_per_cluster}
+\end{figure}
+CLUSTER 0: viele aus community (writer, advocate), hr/admin und design,
 und paar devops
-    \item CLUSTER 1: eher devops paar developer und Lead
-    \item CLUSTER 2: Developer und others
-    \item ARBEITSLAND:
-    \item CLUSTER 0: hauptsächlich Australia, Ireland aber auch Kanada und bisschen
-UK, USA
-    \item CLUSTER 1: Hauptsächlich Frankreich, Deutschland, Netherlands, Others, Schweden
+CLUSTER 1: eher devops paar developer und Lead
+CLUSTER 2: Developer und others
+
+danach der Arbeitsland
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/working_country_per_cluster.png}
+    \caption{Arbeitsländer pro Cluster}
+    \label{fig:working_country_per_cluster}
+\end{figure}
+CLUSTER 0: hauptsächlich Australia, Ireland aber auch Kanada und bisschen UK, USA
+CLUSTER 1: Hauptsächlich Frankreich, Deutschland, Netherlands, Others, Schweden
 UK, USA, bisschen auch Kanada
-    \item CLUSTER 2: hauptsächlich Brazil
-    \item TECH COMPANY?:
-    \item CLUSTER 0: ja
-    \item CLUSTER 1: eher ja aber nicht immer
-    \item CLUSTER 2: nein
-    \item GENDER:
-    \item CLUSTER 0: hauptächlich other aber auch frauen, männer nicht
-    \item CLUSTER 1: männer und frauen (frauen bissl mehr)
-    \item CLUSTER 2: hauptsächlich männer
-    \item 7 spalten die ordinal encodiert wurden, wieder entskalieren und decodieren
-    \item RELATIVE FIRMENGRÖßE:
-    \item CLUSTER 0: zum großteil 1-5, bisschen 6-25 und über 1000
-    \item CLUSTER 1: hauptächlicht 1-5, bisschen 6-25 und über 1000
-    \item CLUSTER 2: hauptsächlich 1-5 UND über 1000, weniger 6-25
-    \item RELATIV ALTER:
-    \item CLUSTER 0: huptsächlich 17-25
-    \item CLUSTER 1: hauptsächlich 17-25
-    \item CLUSTER 2: großteil 17-25 aber auch 56-67
-    \item RELATIVE REMOTE WORK:
-    \item CLUSTER 0: hauptsächlich niemals, aber viele auch immer/manchmal
-    \item CLUSTER 1: hauptsächlich niemals, aber viele auch immer/manchmal
-    \item CLUSTER 2: hauptsächlich immer, viele manchmal, wenige niemals
-    \item MEDICAL LEAVE FROM WORK:
-    \item CLUSTER 0: hauptsächlich sehr schwer
-    \item CLUSTER 1: sehr ähnlich
-    \item CLUSTER 2: sehr schwer/idk
-    \item über MH DER FAMILIE/FREUNDEN ERZÄHLEN:
-    \item CLUSTER 0: lieber nicht
-    \item CLUSTER 1: lieber nicht
-    \item CLUSTER 2: lieber nicht/betrifft mich nicht, und sehr offen
-    \item Probleme bei Arbeit wenn gut behandelt:
-    \item CLUSTER 0: niemals, manche manchmal
-    \item CLUSTER 1: niemals/manchmal
-    \item CLUSTER 2: niemals
-    \item Probleme bei Arbeit wenn NICHT gut behandelt:
-    \item CLUSTER 0: niemals, manche manchmal
-    \item CLUSTER 1: niemals/manchmal, viele keine MH
-    \item CLUSTER 2: niemals/manchmal, aber großteil keine MH
-\end{itemize}
+CLUSTER 2: hauptsächlich Brazil
+
+danach wurde untersucht "Is your employer primarily a tech company/organization?\_1.0"
+\begin{table}[H]
+    \centering
+    \caption{Clustering von Tech Company}
+    \label{tab:clustering_tech_company}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Cluster 0} & 0.91 & stark überdurchschnittlich \\ \hline
+        \textbf{Cluster 1} & 0.17 & durchschnittlich \\ \hline
+        \textbf{Cluster 2} & -1.07 & stark unterdurchschnittlich \\ \hline
+    \end{tabular}
+\end{table}
+entscheidend ist, das bei 0 hauptsächlich die tech company ist, während bei 2 nicht
+
+dann untersuchung auf Geschlecht
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/gender_per_cluster.png}
+    \caption{Geschlecht pro Cluster}
+    \label{fig:gender_per_cluster}
+\end{figure}
+0 sind hauptsächlich Frauen und "andere", 2 sind hauptsächlich männer, 1 sind 
+männer/frauen so 50/50
+
+dann remote job?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/relative_remote_work.png}
+    \caption{Remote Work pro Cluster (relativ)}
+    \label{fig:remote_work_per_cluster}
+\end{figure}
+0 und 1 eher niemals remote, 2 viel öfter
+
+dann ob bei potenziellen mentalen probleme die es mit ihren freunden/familien teilen würden
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/sharing_mental_illness.png}
+    \caption{Über MH-Problemen mit Familie teilen pro Cluster (relativ)}
+    \label{fig:sharing_mh_issues_per_cluster}
+\end{figure}
+0 und 1 sind nicht offen über potenzielle mh den freunden und familie zu 
+erzählen, bei 2 ist es eher ausgewogen
+
+dann wie ihre mentale probleme die arbeit beeinflussen, wenn
+- gut behandelt werden in arbeit
+- NICHT gut behandelt werden in der arbeit
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/problems_at_work_treated_effectively.png}
+    \caption{Schwierigkeiten in der Arbeit bei guter Behandlung}
+    \label{fig:problems_at_work_treated_effectively}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/problems_at_work_not_treated_effectively.png}
+    \caption{Schwierigkeiten in der Arbeit bei schlechter Behandlung}
+    \label{fig:problems_at_work_not_treated_effectively}
+\end{figure}
+allgemein sieht man dass wenn leute nicht gut behandelt werden, führt es
+öfter zu problemene und schwierigkeiten bei der arbeit
 
 \section{Übertragung auf HR-Kontext}
 - Welcher Cluster ist besonders belastet?\\
 - Welche Kombinationen von Faktoren treten gehäuft auf?\\
 - Welche Gruppen könnten gezielte Unterstützung benötigen?\\
+vielleicht noch bildlich darstellen oder so
 
 
 
