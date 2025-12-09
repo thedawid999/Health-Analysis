@@ -1,43 +1,47 @@
-\chapter{Diskussion}
-
-\section{Bewertung des Vorgehens}
-- Was hat gut funktioniert?\\
-- Was hat schlecht funktioniert?\\
-- Welche Alternativen wären möglich?\\
-
-\section{Grenzen der Analyse}
-- Qualität der Umfragedaten\\
-- Generalisierbarkeit\\
-- Nicht berücksichtigte Faktoren\\
-
-
-
 \chapter{Schluss}
 
-\section{Zentrale Erkenntnisse}
-- Welche Cluster wurden gefunden?\\
-- Was sind deren Hauptmerkmale?\\
-- Welche Muster sind besonders problematisch?\\
-
-\section{Ableitungen konkreter Maßnahmen für HR}
-- Zielgruppenspezifische Interventionen\\
-- Programme zur psychischen Entlastung\\
-- Verbesserungen von Arbeitsbedingungen\\
-- Informations- und Unterstützungsangebote\\
-
-\section{Ausblick}
-- Nutzung weiterer Datenquellen\\
-- Kontinuierliches Monitoring\\
-- Potenzial für zukünftige ML-Modelle\\
-
-
-
-\paragraph{Literaturverzeichnis}
-\paragraph{Anhang}
-- Visualisierungen\\
-- Feature-Listen\\
-- Clustering-Parameter\\
-\paragraph{LINK ZU GITHUB!}
+Das gewählte methodische Vorgehen hat sich insgesamt als positiv erwiesen. Besonders gut
+funktionierten die Datenaufbereitung sowie das Clustering. Die klare Strukturierung 
+entlang des klassischen Data-Science-Workflows 
+ermöglichte eine nachvollziehbare Analyse und eine solide Grundlage für die spätere 
+Interpretation. Auch die Integration neuer Merkmale erwies sich als 
+hilfreich, um ein grobes Gesamtbild zu erhalten.
+Herausfordernder war hingegen der Umgang mit der hohen Dimensionalität des Datensatzes und den 
+zahlreichen fehlenden Werten. Trotz sorgfältiger Imputationsmethoden bleibt die Gefahr bestehen, 
+dass bestimmte Muster dadurch abgeschwächt oder verstärkt wurden. Alternative Ansätze wie 
+robustere Feature-Selection-Methoden,
+nichtlineare Dimensionsreduktion oder andere Clusterverfahren hätten zusätzliche Perspektiven 
+eröffnet und möglicherweise feinere Strukturen sichtbar gemacht.\\
+\\
+\noindent Die Analyse unterliegt mehreren Einschränkungen. Erstens ist die Qualität der Umfragedaten 
+heterogen. Subjektive Selbsteinschätzungen sind anfällig für Verzerrungen, und der Anteil 
+fehlender Werte erschwert eine zuverlässige Interpretation. Zweitens ist die Generalisierbarkeit 
+der Ergebnisse begrenzt, da die Stichprobe in einigen Clustern stark von spezifischen Regionen 
+oder Berufsgruppen geprägt ist. Drittens wurden 
+einige potenziell relevante Faktoren nicht berücksichtigt, darunter organisational-historische 
+Entwicklungen oder externe Belastungsfaktoren außerhalb des 
+Arbeitsplatzes. Diese könnten zukünftige Analysen weiter differenzieren.\\
+\\
+\noindent Die Clusteranalyse identifizierte drei klar voneinander abgegrenzte Mitarbeitendengruppen. 
+Cluster 0 weist ein personenzentriertes Belastungsprofil mit niedriger psychischer Gesundheit, 
+geringer Offenheit und eingeschränkter sozialer Unterstützung auf. Cluster 1 bildet eine stabile 
+Vergleichsgruppe mit leicht positiven Ausprägungen in nahezu allen Kernvariablen sowie einer 
+ausgewogenen demografischen Struktur. Cluster 2 zeigt ein organisationszentriertes 
+Belastungsmuster, geprägt durch hohe Offenheit und psychische Stabilität, jedoch gleichzeitig 
+sehr schwache Arbeitgeberunterstützung und stark ausgeprägtes berufliches Stigma. Auffällig ist, 
+dass diese psychische Stabilität möglicherweise mit der Länderzusammensetzung zusammenhängt, da 
+dieses Cluster nahezu ausschließlich aus Personen aus Brasilien besteht.
+Besonders problematisch ist die Feststellung, dass vorhandene Unterstützungsprogramme nicht 
+automatisch wirksam sind. Cluster 0 erhält zwar prinzipiell betriebliche Angebote, befindet 
+sich jedoch in der schlechtesten mentalen Lage. Cluster 2 hingegen verfügt kaum über 
+Unterstützung, zeigt aber dennoch hohe psychische Stabilität.\\
+\\
+\noindent Für zukünftige Arbeiten bietet sich die Integration weiterer Datenquellen wie Leistungsmetriken 
+oder Teamstrukturen an, um ein übersichtlicheres Bild der 
+Belastungslagen zu erhalten. Ebenso wäre ein kontinuierliches Monitoring sinnvoll, um die 
+Wirksamkeit spezifischer Interventionen zu prüfen und Veränderungen im Zeitverlauf sichtbar zu 
+machen. Darüber hinaus eröffnet der Einsatz fortgeschrittener ML-Modelle
+hohes Potenzial für ein präventiv ausgerichtetes Gesundheitsmanagement.
 
 
 
