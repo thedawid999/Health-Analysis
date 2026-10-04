@@ -89,11 +89,17 @@ Zwei Ansätze wurden verglichen:
 
 **Ansatz B – Manuelle Feature-Konstruktion (finaler Ansatz)**
 Fünf psychologisch interpretierbare Scores wurden gebildet:
- * **employer_support_score**
- * **prev_employer_support_score**
- * **openness_score**
- * **perceived_stigma_score**
- * **mh_status_score**
+ * **employer_support_score** misst, wie stark der derzeitige Arbeitgeber mentale Gesundheit unterstützt (höherer
+Wert = stärkerer Support) 
+ * **prev_employer_support_score** ist analog zum obigen Score, jedoch für den vorherigen
+Arbeitgeber
+ * **openness_score** erfasst, wie offen der Befragte gegenüber einem neuen Arbeitgeber in Bezug
+auf mentale Gesundheit wäre
+ * **perceived_stigma_score** misst, wie stark der Befragte die Meinung vertritt,
+dass Offenheit über mentale Gesundheit der Karriere oder dem Team schaden könnte (höherer Wert = stärker
+wahrgenommenes Stigma)
+ * **mh_status_score** bewertet den subjektiven mentalen Gesundheitsstatus der
+Person
 
 ➡️ Ergebnis: Reduktion auf 35 Merkmale, interpretierbare Struktur, verbesserte Clustermetriken (Silhouetten-Score und BIC/AIC)
 
@@ -138,5 +144,23 @@ Eine klare Segmentierung in drei Gruppen wurde erreicht.
  * Stark ausgeprägtes Stigmaerleben
  * Fast ausschließlich Brasilien
  * Systemische bzw. kulturelle Faktoren relevant
+
+## 🎯 Ergebnisse
+
+### Fünf selbst-generierte Features pro Cluster
+<img width="1374" height="966" alt="Screenshot 2026-10-04 165756" src="https://github.com/user-attachments/assets/ae8f6fb3-273f-4355-a513-cf5bd9058d28" />
+
+### Allgemeine Features pro Cluster
+| Arbeitsstellen | Arbeitsländer | Geschlecht |
+|:---:|:---:|:---:|
+| <img width="924" height="832" alt="Screenshot 2026-10-04 170039" src="https://github.com/user-attachments/assets/06b9213f-ffb5-43bf-8619-258950308315" /> | <img width="932" height="831" alt="Screenshot 2026-10-04 170046" src="https://github.com/user-attachments/assets/2d1a6f84-8316-47e0-89c8-2edc94430b58" /> | <img width="950" height="795" alt="Screenshot 2026-10-04 170052" src="https://github.com/user-attachments/assets/4ec22953-21c9-4825-9d83-96d1305e46d0" /> |
+
+| Remote Work | Über MH-Probleme mit Familie teilen |
+|:---:|:---:|
+| <img width="1271" height="630" alt="Screenshot 2026-10-04 170336" src="https://github.com/user-attachments/assets/c4fc0242-d834-4f3b-a43c-66e7ef867389" /> | <img width="1287" height="662" alt="Screenshot 2026-10-04 170341" src="https://github.com/user-attachments/assets/c003c069-0f6c-4df0-b523-640e25129fbd" /> |
+
+| Schwierigkeiten in der Arbeit bei guter Behandlung | Schwierigkeiten in der Arbeit bei schlechter Behandlung |
+|:---:|:---:|
+| <img width="1314" height="651" alt="Screenshot 2026-10-04 170347" src="https://github.com/user-attachments/assets/8b9d3d18-657b-4f98-ae4f-1da46bf6d992" /> | <img width="1284" height="642" alt="Screenshot 2026-10-04 170352" src="https://github.com/user-attachments/assets/b8c91289-c2cc-459a-9ea8-7710a599e431" /> |
 
 
